@@ -3,7 +3,7 @@ services:
     name: agree-game
     env: python
     plan: free
-    buildCommand: python -m pip install -r requirements.txt
+    buildCommand: echo "No dependencies to install"
     startCommand: python server.py
     autoDeploy: true
     envVars:

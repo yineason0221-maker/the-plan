@@ -47,25 +47,47 @@ https://agree-game.onrender.com
 ### 步驟 1：建立前台專案
 
 1. 在 GitHub 上建立一個新的 repository（例如：`agree-game-frontend`）
-2. 將以下檔案複製到這個新 repository：
-   - `game.html`
-   - `assets/` 資料夾（包含 `game.js` 和 `styles.css`）
+2. 在 repository 中建立以下檔案結構：
+
+**方法 A：使用 GitHub 網頁介面**
+- 點擊 "Add file" → "Create new file"
+- 檔案路徑輸入：`game.html`
+- 貼上 `game.html` 的內容
+- 重複建立 `assets/game.js` 和 `assets/styles.css`
+
+**方法 B：使用 Git 命令**
+```bash
+# 複製檔案到新資料夾
+mkdir agree-game-frontend
+cd agree-game-frontend
+cp ../agree_game/game.html .
+cp -r ../agree_game/assets .
+```
+
+3. 確認 repository 結構如下：
+```
+agree-game-frontend/
+├── game.html
+└── assets/
+    ├── game.js
+    └── styles.css
+```
 
 ### 步驟 2：修改前端 API 網址
 
 在 `assets/game.js` 中，找到這一行：
 
 ```javascript
-const API_BASE_URL = window.location.origin; // 自動使用當前網站的 origin
+const API_BASE_URL = "https://the-plan.onrender.com"; // 
 ```
 
 改為：
 
 ```javascript
-const API_BASE_URL = "https://agree-game.onrender.com"; // 改成您的 Render 網址
+const API_BASE_URL = "https://the-plan.onrender.com"; // 改成您的 Render 網址
 ```
 
-**重要**：請將 `https://agree-game.onrender.com` 換成您實際的 Render 網址。
+**重要**：請確認 `https://the-plan.onrender.com` 是您實際的 Render 網址（不要有結尾的斜線）。
 
 ### 步驟 3：啟用 GitHub Pages
 

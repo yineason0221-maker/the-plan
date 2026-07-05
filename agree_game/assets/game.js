@@ -1,5 +1,5 @@
 const QUESTION_ID = "agree-me";
-const API_BASE_URL = window.location.origin; // 自動使用當前網站的 origin
+const API_BASE_URL = "https://the-plan.onrender.com"; // 
 let VOTE_KEY = `agree_game_vote_${QUESTION_ID}_v1`;
 
 const form = document.getElementById("vote-form");
