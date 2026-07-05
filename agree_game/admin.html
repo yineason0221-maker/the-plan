@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>後台</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script defer src="/assets/admin.js"></script>
+  </head>
+  <body class="admin-view">
+    <main class="page">
+      <section class="shell shell--wide">
+        <article class="card">
+          <div class="card__body">
+            <div class="flash-list" id="flash-list" aria-live="polite"></div>
+
+            <section class="panel" id="login-panel">
+              <form class="login-form" id="login-form">
+                <div class="field">
+                  <label for="password">密碼</label>
+                  <input id="password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="button" type="submit">登入</button>
+              </form>
+            </section>
+
+            <section class="layout" id="dashboard" hidden>
+              <div class="topbar">
+                <button class="ghost-button" id="logout-button" type="button">登出</button>
+              </div>
+              <div class="summary-grid" id="summary-grid"></div>
+              <section class="panel">
+                <h2>統計</h2>
+                <div class="question-grid" id="question-grid"></div>
+              </section>
+              <section class="panel">
+                <h2>最近回應</h2>
+                <div class="table-wrap" id="recent-wrap"></div>
+              </section>
+              <section class="panel">
+                <h2>管理</h2>
+                <div class="admin-tools">
+                  <form class="admin-form" id="password-form">
+                    <div class="field">
+                      <label for="current-password">目前密碼</label>
+                      <input id="current-password" name="current_password" type="password" autocomplete="current-password" required>
+                    </div>
+                    <div class="field">
+                      <label for="new-password">新密碼</label>
+                      <input id="new-password" name="new_password" type="password" autocomplete="new-password" required>
+                    </div>
+                    <div class="field">
+                      <label for="confirm-password">確認新密碼</label>
+                      <input id="confirm-password" name="confirm_password" type="password" autocomplete="new-password" required>
+                    </div>
+                    <button class="button" type="submit">修改密碼</button>
+                  </form>
+                  <div class="admin-danger">
+                    <p class="panel__muted">清空後台紀錄會刪掉所有投票資料，前台也會重新開放投票。</p>
+                    <button class="button button--danger" id="clear-records-button" type="button">清空紀錄</button>
+                  </div>
+                </div>
+              </section>
+            </section>
+
+            <p class="sr-only" id="status" aria-live="polite"></p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

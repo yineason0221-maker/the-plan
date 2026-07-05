@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>投票</title>
+    <meta name="description" content="你同意我嗎？">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script defer src="/assets/game.js"></script>
+  </head>
+  <body class="game-view">
+    <main class="page">
+      <section class="shell shell--game">
+        <article class="card game-card">
+          <div class="card__body">
+            <h1 class="game-question">你同意我嗎？</h1>
+
+            <form class="choices vote-form" id="vote-form" data-question-id="agree-me">
+              <button class="choice-button choice-agree" type="button" data-choice="agree">同意</button>
+              <button class="choice-button choice-disagree" type="button" data-choice="disagree">不同意</button>
+            </form>
+
+            <p class="sr-only" id="status" aria-live="polite"></p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

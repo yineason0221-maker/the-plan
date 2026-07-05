@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "id": "agree-me",
+      "prompt": "你同意我嗎？",
+      "description": "先做第一版單題投票，之後可以繼續加新題目、加多選項或做成分支劇情。",
+      "active": true,
+      "choices": [
+        {
+          "value": "agree",
+          "label": "同意"
+        },
+        {
+          "value": "disagree",
+          "label": "不同意"
+        }
+      ]
+    }
+  ]
+}
