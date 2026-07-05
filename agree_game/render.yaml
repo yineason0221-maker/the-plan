@@ -5,6 +5,7 @@ services:
     plan: free
     buildCommand: echo "No dependencies to install"
     startCommand: python server.py
+    rootDirectory: agree_game
     autoDeploy: true
     envVars:
       - key: SECRET_KEY
