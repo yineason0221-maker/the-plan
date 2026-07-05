@@ -73,21 +73,56 @@ agree-game-frontend/
     └── styles.css
 ```
 
-### 步驟 2：修改前端 API 網址
+### 步驟 2：選擇正確的 game.js 版本
 
-在 `assets/game.js` 中，找到這一行：
+這個專案現在有三個 game.js 相關檔案，請按照以下說明使用：
 
-```javascript
-const API_BASE_URL = "https://the-plan.onrender.com"; // 
+**檔案對照表**：
+
+| 檔案名稱 | API 網址類型 | 使用位置 | 說明 |
+|---------|------------|---------|------|
+| `game.js`（原本的） | 固定網址 | ⚠️ 不使用 | 這是開發過程中的版本，現在不需要使用 |
+| `game.backend.js` | 動態網址 | 後端 Render | 使用 `window.location.origin`，自動適應 Render 網址 |
+| `game.frontend.js` | 固定網址 | 前台 GitHub Pages | 固定指向 `https://the-plan.onrender.com` |
+
+**後端 Repository（部署到 Render）的檔案選擇**：
+```
+agree-game/
+├── server.py
+├── render.yaml
+├── data/
+├── assets/
+│   ├── game.backend.js  ← 使用這個（重新命名為 game.js）
+│   ├── game.js          ← 原本的，可以刪除或忽略
+│   └── styles.css
+├── game.html
+├── admin.html
+└── requirements.txt
 ```
 
-改為：
+**操作**：
+1. 將 `assets/game.backend.js` 重新命名為 `assets/game.js`
+2. 可以刪除原本的 `assets/game.js`（或保留但不會被使用）
+3. 推送到 GitHub，Render 會自動部署
 
-```javascript
-const API_BASE_URL = "https://the-plan.onrender.com"; // 改成您的 Render 網址
+**前台 Repository（部署到 GitHub Pages）的檔案選擇**：
+```
+agree-game-frontend/
+├── game.html
+└── assets/
+    ├── game.js  ← 使用 game.frontend.js 重新命名
+    └── styles.css
 ```
 
-**重要**：請確認 `https://the-plan.onrender.com` 是您實際的 Render 網址（不要有結尾的斜線）。
+**操作**：
+1. 將 `game.frontend.js` 重新命名為 `game.js`
+2. 上傳到前台 GitHub repository 的 `assets/` 資料夾中
+3. 確認 `https://the-plan.onrender.com` 是您實際的 Render 網址
+
+**簡單記憶法**：
+- **後端**：用 `game.backend.js`（動態，自動適應）
+- **前台**：用 `game.frontend.js`（固定，指向 Render）
+- **原本的 game.js**：兩個都不用，可以忽略
 
 ### 步驟 3：啟用 GitHub Pages
 
